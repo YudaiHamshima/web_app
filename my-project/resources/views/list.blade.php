@@ -17,7 +17,7 @@
                 </div>
                 <div class="task-contents">
                     <p>タスク名</p>
-                    <p class="task-name">タスクタスクタスクタスク</p>
+                    <p class="task-name">{{ $task_name }}</p>
                     <p>期日</p>
                     <p class="task-name">いつまでいつまでいつまで</p>
                     <p>備考</p>

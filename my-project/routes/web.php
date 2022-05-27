@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\ListController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -19,6 +19,10 @@ Route::get('/create', function () {
 Route::get('/list', function () {
     return view('list');
 });
+
+Route::get('/list', [ListController::class, 'show_task']);
+
+
 
 Route::get('/', function () {
     return view('welcome');
