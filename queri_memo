@@ -1,0 +1,14 @@
+create table tasks (
+    id int not null auto_increment,
+    task_name varchar(50),
+    deadline date,
+    edit_date date,
+    registration_date date,
+    remarks varchar(200),
+    primary key (id)
+);
+
+insert into tasks
+(id, task_name, deadline, registration_date)
+values
+(1, 'osannpo', '2022-05-31', '2022-05-27');
