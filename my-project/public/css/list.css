@@ -1,0 +1,8 @@
+.btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(101, 157, 221);
+    color: white;
+    width: 50%;
+}

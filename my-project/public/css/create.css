@@ -1,0 +1,18 @@
+.btn {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    background-color: rgb(101, 157, 221);
+    color: white;
+    width: 50%;
+}
+
+.taskname {
+    width: 500px;
+}
+
+.tasktxt {
+    width: 500px;
+    height: 250px;
+    margin-bottom: 80px;
+}
