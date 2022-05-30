@@ -19,9 +19,5 @@
             <input type="submit" class="btn return_list" value="登録">
         </form>
 
-            @isset($task_name)
-                {{ $task_name }}
-            @endisset
-
     </body>
 </html>
