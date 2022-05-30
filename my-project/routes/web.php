@@ -1,7 +1,10 @@
 <?php
 
+#新しいコントローラーを作ったら忘れずに！！！！！！
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
+use App\Http\Controllers\CreateController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +25,10 @@ Route::get('/list', function () {
 
 Route::get('/list/{id}', [ListController::class, 'show_task']);
 
+Route::get('/create/{id}', [CreateController::class, 'create_task']);
 
+
+#新しいコントローラーを作ったら一番上までスクロール！！！！
 
 Route::get('/', function () {
     return view('welcome');
