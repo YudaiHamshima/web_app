@@ -8,18 +8,6 @@ use Illuminate\Support\Facades\DB;
 
 class CreateController extends Controller
 {
-    public function create_task($task_name, $deadline, $remarks)
-    {
-        DB::table('tasks')->insert([
-            'id' => $id,
-            'task_name' => $task_name,
-            'deadline' => $deadline,
-            'remarks' => $reamrks
-        ]);
-
-        return view('list');
-    }
-
 
     public function create_task2(Request $request, $id)
     {
