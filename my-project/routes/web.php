@@ -20,7 +20,7 @@ Route::get('/list', function () {
     return view('list');
 });
 
-Route::get('/list', [ListController::class, 'show_task']);
+Route::get('/list/{id}', [ListController::class, 'show_task']);
 
 
 

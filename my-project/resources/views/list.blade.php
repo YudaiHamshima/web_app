@@ -19,9 +19,9 @@
                     <p>タスク名</p>
                     <p class="task-name">{{ $task_name }}</p>
                     <p>期日</p>
-                    <p class="task-name">いつまでいつまでいつまで</p>
+                    <p class="task-name">{{ $deadline }}</p>
                     <p>備考</p>
-                    <p class="task-name">びこうびこうびこう</p>
+                    <p class="task-name">{{ $remarks }}</p>
                 </div>
             </div>
 
