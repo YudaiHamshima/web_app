@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class CreateController extends Controller
 {
@@ -15,7 +16,8 @@ class CreateController extends Controller
         DB::table('tasks')->insert([
             'task_name' => $request->input('task_name'),
             'deadline' => $request->input('deadline'),
-            'remarks' => $request->input('remarks')
+            'remarks' => $request->input('remarks'),
+            'registration_date' => now()->format('Y-m-d')
         ]);
 
         return view('create');

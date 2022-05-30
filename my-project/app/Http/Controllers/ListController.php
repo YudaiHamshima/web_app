@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class ListController extends Controller
 {
+
     public function show_task($id)
     {
         $task_name = DB::table('tasks')->where('id',$id)->value('task_name');
@@ -19,4 +20,15 @@ class ListController extends Controller
             'remarks' => $remarks
         ]);
     }
+
+
+    public function show_task_test()
+    {
+        $tasks = DB::table('tasks')->get();
+
+        return view('list', [
+            'tasks' => $tasks
+        ]);
+    }
+
 }

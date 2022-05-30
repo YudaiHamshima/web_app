@@ -23,9 +23,12 @@ Route::get('/list', function () {
     return view('list');
 });
 
+
 Route::get('/list/{id}', [ListController::class, 'show_task']);
 
 Route::get('/create/test', [CreateController::class, 'create_task']);
+
+Route::get('/list/test', [ListController::class, 'show_task_test']);
 
 #新しいコントローラーを作ったら一番上までスクロール！！！！
 
