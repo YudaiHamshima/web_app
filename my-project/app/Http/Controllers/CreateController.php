@@ -9,13 +9,13 @@ use Illuminate\Support\Facades\DB;
 class CreateController extends Controller
 {
 
-    public function create_task2(Request $request, $id)
+    public function create_task(Request $request)
     {
+
         DB::table('tasks')->insert([
-            'id' => $id,
             'task_name' => $request->input('task_name'),
             'deadline' => $request->input('deadline'),
-            'remarks' => $request->input('reamrks')
+            'remarks' => $request->input('remarks')
         ]);
 
         return view('create');

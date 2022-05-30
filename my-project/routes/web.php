@@ -25,7 +25,7 @@ Route::get('/list', function () {
 
 Route::get('/list/{id}', [ListController::class, 'show_task']);
 
-Route::get('/create/test2/{id}', [CreateController::class, 'create_task2']);
+Route::get('/create/test', [CreateController::class, 'create_task']);
 
 #新しいコントローラーを作ったら一番上までスクロール！！！！
 
