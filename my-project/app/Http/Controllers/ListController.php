@@ -8,6 +8,19 @@ use Illuminate\Support\Facades\DB;
 class ListController extends Controller
 {
 
+    public function show_task_list()
+    {
+        $tasks = DB::table('tasks')->get();
+
+        return view('tasklist', [
+            'tasks' => $tasks
+        ]);
+    }
+
+
+    ################################################################
+
+    #test code
     public function show_task($id)
     {
         $task_name = DB::table('tasks')->where('id',$id)->value('task_name');
@@ -21,7 +34,7 @@ class ListController extends Controller
         ]);
     }
 
-
+    #error code
     public function show_task_test()
     {
         $tasks = DB::table('tasks')->get();
@@ -30,15 +43,5 @@ class ListController extends Controller
             'tasks' => $tasks
         ]);
     }
-
-    public function read_test()
-    {
-        $tasks = DB::table('tasks')->get();
-
-        return view('readtest', [
-            'tasks' => $tasks
-        ]);
-    }
-
 
 }

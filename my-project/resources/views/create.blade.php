@@ -7,9 +7,9 @@
     </head>
     <body>
 
-        <a class="btn return_list" href="{{ url('/list/1') }}">一覧に戻る</a>
+        <a class="btn return_list" href="{{ url('/list') }}">一覧に戻る</a>
 
-        <form action="/create/test" method="get">
+        <form action="/create" method="get">
             <p>タスク名</p>
             <input name="task_name" class="taskname" type="text">
             <p>期日</p>

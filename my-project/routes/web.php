@@ -17,31 +17,28 @@ use Illuminate\Support\Facades\DB;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/create', function () {
-    return view('create');
-});
-
-Route::get('/list', function () {
-    return view('list');
-});
-
-#Route::get('/readtest', function () {
-    #function
-#    $tasks = DB::table('tasks')->get();
-    #view
-#    return view('readtest',['tasks' => $tasks]);
-#});
-
-Route::get('/readtest', [ListController::class, 'read_test']);
-
-Route::get('/list/{id}', [ListController::class, 'show_task']);
-
-Route::get('/create/test', [CreateController::class, 'create_task']);
-
-Route::get('/list/test', [ListController::class, 'show_task_test']);
 
 #新しいコントローラーを作ったら一番上までスクロール！！！！
 
+#Route::get('/create', function () {
+#    return view('create');
+#});
+
+Route::get('/list', [ListController::class, 'show_task_list']);
+
+Route::get('/create', [CreateController::class, 'create_task']);
+
+
+
+################################################################
+
+#test code
+Route::get('/list/{id}', [ListController::class, 'show_task']);
+
+#error code
+Route::get('/list/test', [ListController::class, 'show_task_test']);
+
+#default code for 'localhost8000'
 Route::get('/', function () {
     return view('welcome');
 });
