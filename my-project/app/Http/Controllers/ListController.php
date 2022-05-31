@@ -31,5 +31,14 @@ class ListController extends Controller
         ]);
     }
 
+    public function read_test()
+    {
+        $tasks = DB::table('tasks')->get();
+
+        return view('readtest', [
+            'tasks' => $tasks
+        ]);
+    }
+
 
 }

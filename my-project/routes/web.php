@@ -25,12 +25,14 @@ Route::get('/list', function () {
     return view('list');
 });
 
-Route::get('/readtest', function () {
+#Route::get('/readtest', function () {
     #function
-    $tasks = DB::table('tasks')->get();
+#    $tasks = DB::table('tasks')->get();
     #view
-    return view('readtest',['tasks' => $tasks]);
-});
+#    return view('readtest',['tasks' => $tasks]);
+#});
+
+Route::get('/readtest', [ListController::class, 'read_test']);
 
 Route::get('/list/{id}', [ListController::class, 'show_task']);
 
