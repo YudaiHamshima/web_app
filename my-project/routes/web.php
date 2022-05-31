@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\CreateController;
 
+use Illuminate\Support\Facades\DB;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,6 +25,12 @@ Route::get('/list', function () {
     return view('list');
 });
 
+Route::get('/readtest', function () {
+    #function
+    $tasks = DB::table('tasks')->get();
+    #view
+    return view('readtest',['tasks' => $tasks]);
+});
 
 Route::get('/list/{id}', [ListController::class, 'show_task']);
 
