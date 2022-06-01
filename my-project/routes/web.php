@@ -42,9 +42,9 @@ Route::get('/edit/{id}', [EditController::class, 'edit_task']);
 
 Route::get('/delete/{id}', [DeleteController::class, 'delete_task']);
 
-Route::get('sort_by_deadline', [SortController::class, 'sort_by_deadline']);
+Route::get('/sort_by_deadline', [SortController::class, 'sort_by_deadline']);
 
-Route::get('show_until', [SortController::class, 'show_until']);
+Route::get('/show_until', [SortController::class, 'show_until']);
 
 
 
