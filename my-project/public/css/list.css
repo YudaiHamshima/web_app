@@ -16,5 +16,15 @@
     width: 50%;
 }
 
+.sort-by-deadline {
+    background-color: rgb(255, 98, 0);
+    color: white;
+    width: 10%;
+}
 
+.show-until-show {
+    background-color: rgb(101, 157, 221);
+    color: white;
+    width: 20%;
+}
 

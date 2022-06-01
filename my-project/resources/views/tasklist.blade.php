@@ -11,6 +11,7 @@
         </header>
 
         <div class="main">
+
             <div class="task-box">
                 @foreach($tasks as $task)
                     <div class="update">
@@ -27,6 +28,15 @@
                     </div>
                 @endforeach
             </div>
+
+            <div class="sort-section">
+                <a class="btn sort-by-deadline" href="/sort_by_deadline">期日順</a>
+                <form action="/show_until_sction" class="show-until">
+                    <input class="btn show-until-date" type="date">
+                    <input class="btn show-until-show" type="submit" value="までのタスクを表示">
+                </form>
+            </div>
+
         </div>
 
     </body>

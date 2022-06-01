@@ -6,6 +6,7 @@ use App\Http\Controllers\ListController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\EditController;
 use App\Http\Controllers\DeleteController;
+use App\Http\Controllers\SortController;
 
 use Illuminate\Support\Facades\DB;
 
@@ -35,12 +36,15 @@ Route::get('/create_form', function() {
 
 Route::get('/create', [CreateController::class, 'create_task']);
 
-
 Route::get('/edit_form/{id}', [EditController::class, 'show_edit_form']);
 
 Route::get('/edit/{id}', [EditController::class, 'edit_task']);
 
 Route::get('/delete/{id}', [DeleteController::class, 'delete_task']);
+
+Route::get('sort_by_deadline', [SortController::class, 'sort_by_deadline']);
+
+Route::get('show_until', [SortController::class, 'show_until']);
 
 
 
