@@ -9,19 +9,28 @@ use Illuminate\Support\Carbon;
 
 class EditController extends Controller
 {
-    public function show_edit_form()
+    public function show_edit_form($id)
     {
-        return view('edit');
+        $task = DB::table('tasks')->where('id', $id)->first();
+
+        return view('edit', [
+            'id' => $id,
+            'task_name' => $task->task_name,
+            'deadline' => $task->deadline,
+            'remarks' => $task->remarks
+        ]);
     }
 
-    public function edit_task(Request $request)
+    public function edit_task(Request $request, $id)
     {
 
-        DB::table('tasks')->insert([
+        DB::table('tasks')
+            ->where('id', $id)
+            ->update([
             'task_name' => $request->input('task_name'),
             'deadline' => $request->input('deadline'),
             'remarks' => $request->input('remarks'),
-            'registration_date' => now()->format('Y-m-d')
+            'edit_date' => now()->format('Y-m-d')
         ]);
 
         $tasks = DB::table('tasks')->get();

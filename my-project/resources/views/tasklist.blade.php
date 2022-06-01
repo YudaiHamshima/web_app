@@ -15,7 +15,7 @@
                 @foreach($tasks as $task)
                     <div class="update">
                         <a class="btn update" href="/edit_form/{{ $task->id }}">Edit</a>
-                        <a class="btn update">Delete</a>
+                        <a class="btn update" href="/delete/{{ $task->id }}">Delete</a>
                     </div>
                     <div class="task-contents">
                         <p>タスク名</p>

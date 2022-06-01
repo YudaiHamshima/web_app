@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\CreateController;
 use App\Http\Controllers\EditController;
+use App\Http\Controllers\DeleteController;
 
 use Illuminate\Support\Facades\DB;
 
@@ -37,7 +38,9 @@ Route::get('/create', [CreateController::class, 'create_task']);
 
 Route::get('/edit_form/{id}', [EditController::class, 'show_edit_form']);
 
-Route::get('/edit', [EditController::class, 'edit_task']);
+Route::get('/edit/{id}', [EditController::class, 'edit_task']);
+
+Route::get('/delete/{id}', [DeleteController::class, 'delete_task']);
 
 
 
