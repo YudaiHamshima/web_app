@@ -44,6 +44,8 @@ Route::get('/delete/{id}', [DeleteController::class, 'delete_task']);
 
 Route::get('/sort_by_deadline', [SortController::class, 'sort_by_deadline']);
 
+Route::get('/sort_by_deadline/{shown_tasks_deadline}', [SortController::class, 'sort_by_deadline_shown_tasks']);
+
 Route::get('/show_until', [SortController::class, 'show_until']);
 
 

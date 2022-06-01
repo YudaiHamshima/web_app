@@ -15,6 +15,11 @@
             @isset ($shown_tasks_deadline)
                 <h2>{{ $shown_tasks_deadline }}までのタスク一覧</h2>
             @endisset
+            @isset ($flag)
+                @if($flag === 1)
+                    <h2>（期日順）</h2>
+                @endif
+            @endisset
 
             <div class="task-box">
                 @foreach ($tasks as $task)
@@ -34,12 +39,17 @@
             </div>
 
             <div class="sort-section">
-                <a class="btn sort-by-deadline" href="/sort_by_deadline">期日順</a>
+                @isset ($shown_tasks_deadline)
+                    <a class="btn sort-by-deadline" href="/sort_by_deadline/{{ $shown_tasks_deadline }}">期日順</a>
+                @else
+                    <a class="btn sort-by-deadline" href="/sort_by_deadline">期日順</a>
+                @endisset
                 <form action="/show_until" class="show-until" method="get">
                     <input name="deadline" class="btn show-until-date" type="date">
                     <input class="btn show-until-show" type="submit" value="までのタスクを表示">
                 </form>
             </div>
+
             @isset ($shown_tasks_deadline)
                 <a class="btn show_all_tasks" href="/list">全タスク表示</a>
             @endisset

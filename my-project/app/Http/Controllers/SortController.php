@@ -16,11 +16,29 @@ class SortController extends Controller
         ->orderByRaw('deadline')
         ->get();
 
+        $flag = 1;
+
         return view('tasklist', [
-            'tasks' => $tasks
+            'tasks' => $tasks,
+            'flag' => $flag
         ]);
     }
 
+    public function sort_by_deadline_shown_tasks($shown_tasks_deadline)
+    {
+        $tasks = DB::table('tasks')
+        ->where('deadline','<',$shown_tasks_deadline)
+        ->orderByRaw('deadline')
+        ->get();
+
+        $flag = 1;
+
+        return view('tasklist', [
+            'tasks' => $tasks,
+            'shown_tasks_deadline' => $shown_tasks_deadline,
+            'flag' => $flag
+        ]);
+    }
 
     public function show_until(Request $request)
     {
