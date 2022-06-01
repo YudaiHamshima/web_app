@@ -4,6 +4,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ListController;
 use App\Http\Controllers\CreateController;
+use App\Http\Controllers\EditController;
 
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +27,19 @@ use Illuminate\Support\Facades\DB;
 
 Route::get('/list', [ListController::class, 'show_task_list']);
 
+
+Route::get('/create_form', function() {
+    return view('create');
+});
+
 Route::get('/create', [CreateController::class, 'create_task']);
+
+
+Route::get('/edit_form', function() {
+    return view('edit');
+});
+
+Route::get('/edit', [EditController::class, 'edit_task']);
 
 
 

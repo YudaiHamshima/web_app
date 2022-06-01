@@ -1,8 +1,20 @@
 .btn {
     display: block;
-    text-align: center;
     text-decoration: none;
+}
+
+.update {
+    background-color: rgb(111, 221, 101);
+    color: white;
+    width: 10%;
+}
+
+.return_list {
+    text-align: center;
     background-color: rgb(101, 157, 221);
     color: white;
     width: 50%;
 }
+
+
+

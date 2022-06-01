@@ -7,15 +7,15 @@
     </head>
     <body>
         <header>
-            <a class="btn return_list" href="{{ url('/create') }}">新規作成</a>
+            <a class="btn return_list" href="{{ url('/create_form') }}">新規作成</a>
         </header>
 
         <div class="main">
             <div class="task-box">
                 @foreach($tasks as $task)
                     <div class="update">
-                        <button class="edit">Edit</button>
-                        <button class="delete">Delete</button>
+                        <a class="btn update" href="{{ url('/edit_form') }}">Edit</a>
+                        <a class="btn update">Delete</a>
                     </div>
                     <div class="task-contents">
                         <p>タスク名</p>
