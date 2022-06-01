@@ -12,9 +12,9 @@ class SortController extends Controller
 
     public function sort_by_deadline()
     {
-        $tasks = DB::table('tasks')->get();
-
-
+        $tasks = DB::table('tasks')
+        ->orderByRaw('deadline')
+        ->get();
 
         return view('tasklist', [
             'tasks' => $tasks
