@@ -35,7 +35,7 @@ Route::get('/create_form', function() {
 Route::get('/create', [CreateController::class, 'create_task']);
 
 
-Route::get('/edit_form', [EditController::class, 'show_edit_form']);
+Route::get('/edit_form/{id}', [EditController::class, 'show_edit_form']);
 
 Route::get('/edit', [EditController::class, 'edit_task']);
 

@@ -11,11 +11,11 @@
 
         <form action="/edit" method="get">
             <p>タスク名</p>
-            <input name="task_name" class="taskname" type="text" value="yhea!">
+            <input name="task_name" class="taskname" type="text" value="{{ $task_name }}">
             <p>期日</p>
-            <input name="deadline" type="date">
+            <input name="deadline" type="date" value="{{ $deadline }}">
             <p>備考</p>
-            <textarea name="remarks" class="tasktxt" cols="50" rows="25"></textarea>
+            <textarea name="remarks" class="tasktxt" cols="50" rows="25">{{ $remarks }}</textarea>
             <input type="submit" class="btn return_list" value="登録">
         </form>
 
