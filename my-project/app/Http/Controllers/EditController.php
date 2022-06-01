@@ -9,6 +9,10 @@ use Illuminate\Support\Carbon;
 
 class EditController extends Controller
 {
+    public function show_edit_form()
+    {
+        return view('edit');
+    }
 
     public function edit_task(Request $request)
     {
