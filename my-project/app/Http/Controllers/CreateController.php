@@ -13,6 +13,17 @@ class CreateController extends Controller
     public function create_task(Request $request)
     {
 
+        $validated = $request->validate([
+            'task_name' => ['required','max:20'],
+            'deadline' => ['required'],
+            'remarks' => ['max:200']
+        ],
+            [
+                'task_name.required' => 'タスク名が未入力です',
+                'deadline.required' => '期日が未入力です',
+                'remarks.max' => '備考は200文字以内です'
+            ]);
+
         DB::table('tasks')->insert([
             'task_name' => $request->input('task_name'),
             'deadline' => $request->input('deadline'),
@@ -27,15 +38,5 @@ class CreateController extends Controller
         ]);
     }
 
-
-    #test
-    public function create_task_test(Request $request)
-    {
-        $task_name = $request->input('task_name');
-
-        return view('create')->with([
-            "task_name" => $task_name
-         ]);
-    }
 
 }

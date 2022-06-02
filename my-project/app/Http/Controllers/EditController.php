@@ -23,6 +23,16 @@ class EditController extends Controller
 
     public function edit_task(Request $request, $id)
     {
+        $validated = $request->validate([
+            'task_name' => ['required','max:20'],
+            'deadline' => ['required'],
+            'remarks' => ['max:200']
+        ],
+            [
+                'task_name.required' => 'タスク名が未入力です',
+                'deadline.required' => '期日が未入力です',
+                'remarks.max' => '備考は200文字以内です'
+            ]);
 
         DB::table('tasks')
             ->where('id', $id)
