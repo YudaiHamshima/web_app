@@ -1,5 +1,13 @@
-header {
-    border-bottom: 5%;
+.create-sort {
+    margin-bottom: 8%;
+}
+
+.show-task-deadline {
+    text-align: center;
+}
+
+.sort-deadline-order {
+    text-align: center;
 }
 
 .btn {
@@ -10,9 +18,10 @@ header {
 
 .create-new {
     text-align: center;
+    margin: 0 auto;
     background-color: rgb(33, 137, 255);
     color: white;
-    width: 100%;
+    width: 70%;
 }
 
 .update {
@@ -45,12 +54,12 @@ header {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: space-around;
 }
 
 .task-box {
     border-radius: 10px;
-    width: 44%;
+    width: 45%;
     margin: 2%;
     border: solid 2px rgb(130, 130, 130);
     box-shadow: 5px 5px rgb(221, 221, 221);
@@ -81,6 +90,7 @@ header {
 
 .sort-section form {
     display: flex;
+    justify-content: space-around;
     flex-direction: row;
 }
 
@@ -91,8 +101,16 @@ header {
 .show-until-show {
     background-color: rgb(101, 157, 221);
     color: white;
-    width: 70%;
-    margin-right: 5%;
+    width: 80%;
+    margin-left: 5%;
+}
+
+.show_all_tasks {
+    text-align: center;
+    background-color: rgb(255, 0, 128);
+    color: white;
+    width: 100%;
+    margin: 5% 0;
 }
 
 
