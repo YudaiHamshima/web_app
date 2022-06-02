@@ -52,7 +52,7 @@ class SortController extends Controller
         $shown_tasks_deadline = $request->input('deadline');
 
         $tasks = DB::table('tasks')
-                ->where('deadline','<',$shown_tasks_deadline)
+                ->where('deadline','<=',$shown_tasks_deadline)
                 ->get();
 
         $shown_tasks_num = count($tasks);
