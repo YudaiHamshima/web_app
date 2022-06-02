@@ -7,7 +7,7 @@
     </head>
     <body>
         <header>
-            <a class="btn return_list" href="{{ url('/create_form') }}">新規作成</a>
+            <a class="btn create-new" href="{{ url('/create_form') }}">新規作成</a>
         </header>
 
         <div class="main">
@@ -20,21 +20,22 @@
                     <h2>（期日順）</h2>
                 @endif
             @endisset
-
-            <div class="task-box">
+            <div class="task-boxes">
                 @foreach ($tasks as $task)
-                    <div class="update">
-                        <a class="btn update" href="/edit_form/{{ $task->id }}">Edit</a>
-                        <a class="btn update" href="/delete/{{ $task->id }}">Delete</a>
-                    </div>
-                    <div class="task-contents">
-                        <p>タスク名</p>
-                        <p class="task-name">{{ $task->task_name }}</p>
-                        <p>期日</p>
-                        <p class="task-name">{{ $task->deadline }}</p>
-                        <p>備考</p>
-                        <p class="task-name">{{ $task->remarks }}</p>
-                    </div>
+                <div class="task-box">
+                        <div class="update">
+                            <a class="btn edit" href="/edit_form/{{ $task->id }}">Edit</a>
+                            <a class="btn delete" href="/delete/{{ $task->id }}">Delete</a>
+                        </div>
+                        <div class="task-contents">
+                            <p>タスク名</p>
+                            <p class="task-name">{{ $task->task_name }}</p>
+                            <p>期日</p>
+                            <p class="task-name">{{ $task->deadline }}</p>
+                            <p>備考</p>
+                            <p class="task-name">{{ $task->remarks }}</p>
+                        </div>
+                </div>
                 @endforeach
             </div>
 
