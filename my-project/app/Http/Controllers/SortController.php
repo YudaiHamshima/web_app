@@ -42,6 +42,13 @@ class SortController extends Controller
 
     public function show_until(Request $request)
     {
+        $validated = $request->validate([
+            'shown_tasks_deadline' => ['required']
+        ],
+            [
+                'shown_tasks_deadline.required' => '期日が未入力です'
+            ]);
+
         $shown_tasks_deadline = $request->input('deadline');
 
         $tasks = DB::table('tasks')
