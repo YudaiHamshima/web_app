@@ -16,11 +16,11 @@
                     <a class="btn sort-by-deadline" href="/sort_by_deadline">期日順に並べる</a>
                 @endisset
                 <form action="/show_until" class="show-until" method="get">
-                    <input name="shown_tasks_deadline" class="btn show-until-date" type="date">
+                    <input name="deadline" class="btn show-until-date" type="date">
                     <input class="btn show-until-show" type="submit" value="までのタスクを表示">
                 </form>
                 @if($errors->any())
-                    <p class="error-message">{{ $errors->first('shown_tasks_deadline') }}</p>
+                    <p class="error-message">{{ $errors->first('deadline') }}</p>
                 @endif
                 @isset ($shown_tasks_deadline)
                     <a class="btn show_all_tasks" href="/list">全タスク表示</a>
