@@ -30,6 +30,7 @@ class EditController extends Controller
         ],
             [
                 'task_name.required' => 'タスク名が未入力です',
+                'task_name.max' => 'タスク名は20文字以内です',
                 'deadline.required' => '期日が未入力です',
                 'remarks.max' => '備考は200文字以内です'
             ]);
